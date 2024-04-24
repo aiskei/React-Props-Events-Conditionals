@@ -1,5 +1,5 @@
-import React from "react"
 import UserItems from "./UserItems"
+import React, {useState} from "react"
 
 const UserList = () => {
     const users = [
@@ -8,6 +8,13 @@ const UserList = () => {
         {name: 'Gawlo James', age: 65, city: 'London'},
         {name: 'Saölo Shome', age: 19, city: 'Beijin'},
     ];
+
+    const [count, setCount] = useState(0);
+
+    //button to handle count
+    const handleClick = () => {
+        setCount(count +1)
+    }
 
     return (
         <div>
@@ -19,6 +26,11 @@ const UserList = () => {
                     city={user.city}
                 />
             ))}
+
+            <div>
+                <button onClick={handleClick}>Start counting</button>
+                <p>{count}</p>
+            </div>
         </div>
     );
 }
