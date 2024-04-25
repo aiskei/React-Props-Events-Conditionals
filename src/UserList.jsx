@@ -10,6 +10,7 @@ const UserList = () => {
 
     const [count, setCount] = useState(0)
     const message = 'Yay! you have count to ' + count;
+    const evenUmber = 'Even number '  + count;
 
     //button to handle count
     const handleClick = () => {
@@ -32,8 +33,13 @@ const UserList = () => {
                 <p>{count}</p>
 
                 { count === 10 ?
-                
+
                     <p>{message}</p> : ''
+                }
+
+
+                {  count % 2 ===  0  &&
+                    <p>{evenUmber}</p>
                 }
             </div>
         </div>
